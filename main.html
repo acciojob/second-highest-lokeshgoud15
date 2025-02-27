@@ -10,6 +10,21 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
+			 let first_el = arr[0];
+    let sec_el = -Infinity;
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > first_el) {
+            // Update second largest before updating first largest
+            sec_el = first_el;
+            first_el = arr[i];
+        } else if (arr[i] > sec_el && arr[i] < first_el) {
+            sec_el = arr[i];
+        }
+    }
+    
+    // Return the second largest element
+    return sec_el;
 			
 		}
 
